@@ -1,0 +1,12 @@
+<svg width="1200" height="760" viewBox="0 0 1200 760" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="760" fill="#091224"/>
+  <rect x="44" y="44" width="1112" height="672" rx="28" fill="#0C1A32" stroke="rgba(255,255,255,0.12)"/>
+  <circle cx="960" cy="160" r="120" fill="#F2D83B" fill-opacity="0.16"/>
+  <circle cx="960" cy="160" r="54" fill="#F2D83B"/>
+  <text x="88" y="170" fill="#F2D83B" font-family="Arial, sans-serif" font-size="42" letter-spacing="7">CORE LINE</text>
+  <text x="88" y="270" fill="#F5F7FB" font-family="Arial, sans-serif" font-size="92" font-weight="700">Your Brand</text>
+  <text x="88" y="348" fill="#B7C3D9" font-family="Arial, sans-serif" font-size="34">Cost-effective quality products with a clean visual system.</text>
+  <rect x="88" y="430" width="250" height="160" rx="20" stroke="#F2D83B" stroke-opacity="0.4"/>
+  <rect x="368" y="430" width="250" height="160" rx="20" stroke="#F2D83B" stroke-opacity="0.4"/>
+  <rect x="648" y="430" width="250" height="160" rx="20" stroke="#F2D83B" stroke-opacity="0.4"/>
+</svg>

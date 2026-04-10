@@ -1,0 +1,9 @@
+<svg width="1200" height="760" viewBox="0 0 1200 760" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="760" fill="#060E1B"/>
+  <rect x="50" y="50" width="1100" height="660" rx="32" stroke="#F2D83B" stroke-opacity="0.22"/>
+  <circle cx="600" cy="380" r="160" fill="#F2D83B" fill-opacity="0.12"/>
+  <circle cx="600" cy="380" r="72" fill="#F2D83B"/>
+  <text x="110" y="170" fill="#F2D83B" font-family="Arial, sans-serif" font-size="42" letter-spacing="7">LUXURY LINE</text>
+  <text x="110" y="650" fill="#F5F7FB" font-family="Arial, sans-serif" font-size="90" font-weight="700">Your Brand</text>
+  <text x="110" y="708" fill="#B7C3D9" font-family="Arial, sans-serif" font-size="32">Flagship presentation for high-end flower, extracts, or edibles.</text>
+</svg>

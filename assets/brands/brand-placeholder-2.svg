@@ -1,0 +1,10 @@
+<svg width="1200" height="760" viewBox="0 0 1200 760" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="760" fill="#08111F"/>
+  <rect x="60" y="60" width="1080" height="640" rx="30" fill="#0A1730"/>
+  <path d="M780 90H1040V350C1040 450 965 520 870 520H780V90Z" fill="#F2D83B" fill-opacity="0.1"/>
+  <text x="110" y="170" fill="#F2D83B" font-family="Arial, sans-serif" font-size="42" letter-spacing="7">PREMIUM LINE</text>
+  <text x="110" y="276" fill="#F5F7FB" font-family="Arial, sans-serif" font-size="90" font-weight="700">Your Brand</text>
+  <text x="110" y="356" fill="#B7C3D9" font-family="Arial, sans-serif" font-size="34">Design-forward premium cannabis with stronger shelf presence.</text>
+  <rect x="110" y="460" width="440" height="34" rx="17" fill="#132340"/>
+  <rect x="110" y="520" width="340" height="34" rx="17" fill="#132340"/>
+</svg>

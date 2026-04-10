@@ -1,0 +1,8 @@
+<svg width="1200" height="760" viewBox="0 0 1200 760" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="760" fill="#07101E"/>
+  <rect x="80" y="80" width="1040" height="600" rx="30" fill="#0D1C35"/>
+  <circle cx="280" cy="360" r="120" fill="#F2D83B" fill-opacity="0.16"/>
+  <circle cx="280" cy="360" r="48" fill="#F2D83B"/>
+  <text x="470" y="300" fill="#F5F7FB" font-family="Arial, sans-serif" font-size="92" font-weight="700">Lifestyle</text>
+  <text x="470" y="378" fill="#B7C3D9" font-family="Arial, sans-serif" font-size="34">Replace this with campaign, merch, packaging, or brand imagery.</text>
+</svg>
