@@ -14,7 +14,6 @@
   --gold-strong: #ffd97f;
   --gold-soft: rgba(243, 201, 103, 0.18);
   --stroke: rgba(255, 255, 255, 0.09);
-  --stroke-strong: rgba(255, 255, 255, 0.15);
   --shadow: 0 24px 70px rgba(0, 0, 0, 0.35);
   --radius: 26px;
   --container: 1180px;
@@ -53,7 +52,7 @@ body {
   pointer-events: none;
   filter: blur(55px);
   z-index: 0;
-  opacity: 0.4;
+  opacity: 0.35;
   animation: drift 10s ease-in-out infinite;
 }
 
@@ -62,7 +61,7 @@ body {
   height: 280px;
   left: 8%;
   top: 110px;
-  background: rgba(243, 201, 103, 0.15);
+  background: rgba(243, 201, 103, 0.12);
 }
 
 .glow-b {
@@ -70,9 +69,51 @@ body {
   height: 340px;
   right: 5%;
   top: 420px;
-  background: rgba(243, 201, 103, 0.1);
+  background: rgba(243, 201, 103, 0.08);
   animation-delay: -4s;
 }
+
+.fireflies {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.firefly {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 35% 35%, #fff8d9 0%, #ffe79c 28%, #f3c967 56%, rgba(243, 201, 103, 0.2) 72%, rgba(243, 201, 103, 0) 100%);
+  box-shadow:
+    0 0 10px rgba(243, 201, 103, 0.95),
+    0 0 22px rgba(243, 201, 103, 0.45),
+    0 0 42px rgba(243, 201, 103, 0.16);
+  opacity: 0.86;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+.firefly::before {
+  content: "";
+  position: absolute;
+  inset: -10px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(243, 201, 103, 0.16) 0%, rgba(243, 201, 103, 0) 72%);
+  animation: flicker 3.2s ease-in-out infinite;
+}
+
+.firefly-1 { left: 8%;  top: 16%; animation: wander1 18s infinite; }
+.firefly-2 { left: 18%; top: 68%; animation: wander2 22s infinite; width: 6px; height: 6px; }
+.firefly-3 { left: 34%; top: 28%; animation: wander3 20s infinite; }
+.firefly-4 { left: 52%; top: 74%; animation: wander4 24s infinite; width: 7px; height: 7px; }
+.firefly-5 { left: 68%; top: 18%; animation: wander5 19s infinite; }
+.firefly-6 { left: 82%; top: 58%; animation: wander6 23s infinite; width: 6px; height: 6px; }
+.firefly-7 { left: 74%; top: 34%; animation: wander7 21s infinite; }
+.firefly-8 { left: 24%; top: 48%; animation: wander8 26s infinite; width: 7px; height: 7px; }
 
 .site-header,
 main,
@@ -169,13 +210,13 @@ main,
 .section-head h2,
 .cta-card h2 {
   margin: 0;
-  letter-spacing: -0.045em;
-  line-height: 0.96;
+  letter-spacing: -0.038em;
 }
 
 .hero h1 {
-  max-width: 760px;
-  font-size: clamp(3rem, 7vw, 6.35rem);
+  max-width: 860px;
+  font-size: clamp(3rem, 7vw, 6.1rem);
+  line-height: 1.04;
   text-wrap: balance;
 }
 
@@ -291,7 +332,7 @@ main,
   border: 1px solid rgba(255,255,255,0.09);
   background:
     linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02)),
-    rgba(11, 21, 38, 0.74);
+    rgba(9, 18, 34, 0.78);
   box-shadow: var(--shadow);
   overflow: hidden;
   backdrop-filter: blur(18px);
@@ -347,8 +388,8 @@ main,
   background:
     radial-gradient(circle at 35% 30%, #fff3cc 0%, #ffe39f 28%, var(--gold) 54%, #c78e2c 100%);
   box-shadow:
-    0 0 28px rgba(243, 201, 103, 0.45),
-    0 0 88px rgba(243, 201, 103, 0.18);
+    0 0 24px rgba(243, 201, 103, 0.40),
+    0 0 72px rgba(243, 201, 103, 0.14);
   animation: floatOrb 5.5s ease-in-out infinite;
 }
 
@@ -388,6 +429,7 @@ main,
 .cta-card h2 {
   font-size: clamp(2rem, 4.6vw, 3.65rem);
   max-width: 760px;
+  line-height: 1.02;
 }
 
 .logo-rail-wrap {
@@ -453,7 +495,7 @@ main,
 }
 
 .logo-card img {
-  width: 120px;
+  max-width: 128px;
   height: auto;
   opacity: 0.95;
 }
@@ -623,6 +665,12 @@ code {
   50% { transform: translate3d(0, -12px, 0) scale(1.04); }
 }
 
+@keyframes flicker {
+  0%, 100% { opacity: 0.55; transform: scale(0.9); }
+  35% { opacity: 1; transform: scale(1.04); }
+  60% { opacity: 0.72; transform: scale(0.95); }
+}
+
 @keyframes spinSlow {
   from { transform: rotate(0deg); }
   to   { transform: rotate(360deg); }
@@ -636,6 +684,55 @@ code {
 @keyframes slideLogos {
   from { transform: translateX(0); }
   to { transform: translateX(calc(-50% - 8px)); }
+}
+
+@keyframes wander1 {
+  0%,100% { transform: translate3d(0,0,0) scale(1); }
+  25% { transform: translate3d(26px,-22px,0) scale(1.08); }
+  50% { transform: translate3d(48px,14px,0) scale(0.94); }
+  75% { transform: translate3d(10px,34px,0) scale(1.03); }
+}
+@keyframes wander2 {
+  0%,100% { transform: translate3d(0,0,0) scale(1); }
+  20% { transform: translate3d(-22px,-18px,0) scale(1.04); }
+  50% { transform: translate3d(18px,-38px,0) scale(0.92); }
+  80% { transform: translate3d(30px,-12px,0) scale(1.02); }
+}
+@keyframes wander3 {
+  0%,100% { transform: translate3d(0,0,0) scale(1); }
+  30% { transform: translate3d(34px,12px,0) scale(1.05); }
+  60% { transform: translate3d(-10px,36px,0) scale(0.94); }
+  85% { transform: translate3d(18px,-8px,0) scale(1.03); }
+}
+@keyframes wander4 {
+  0%,100% { transform: translate3d(0,0,0) scale(1); }
+  25% { transform: translate3d(-28px,-24px,0) scale(1.03); }
+  55% { transform: translate3d(12px,-42px,0) scale(0.93); }
+  80% { transform: translate3d(34px,-8px,0) scale(1.05); }
+}
+@keyframes wander5 {
+  0%,100% { transform: translate3d(0,0,0) scale(1); }
+  20% { transform: translate3d(20px,18px,0) scale(1.04); }
+  45% { transform: translate3d(-16px,34px,0) scale(0.95); }
+  75% { transform: translate3d(-30px,-10px,0) scale(1.02); }
+}
+@keyframes wander6 {
+  0%,100% { transform: translate3d(0,0,0) scale(1); }
+  22% { transform: translate3d(-24px,14px,0) scale(1.02); }
+  52% { transform: translate3d(-40px,-20px,0) scale(0.93); }
+  78% { transform: translate3d(6px,-34px,0) scale(1.04); }
+}
+@keyframes wander7 {
+  0%,100% { transform: translate3d(0,0,0) scale(1); }
+  28% { transform: translate3d(24px,-16px,0) scale(1.05); }
+  58% { transform: translate3d(-8px,22px,0) scale(0.94); }
+  82% { transform: translate3d(-32px,6px,0) scale(1.02); }
+}
+@keyframes wander8 {
+  0%,100% { transform: translate3d(0,0,0) scale(1); }
+  26% { transform: translate3d(16px,-28px,0) scale(1.03); }
+  48% { transform: translate3d(42px,-6px,0) scale(0.95); }
+  74% { transform: translate3d(10px,22px,0) scale(1.04); }
 }
 
 @media (max-width: 1040px) {
@@ -656,6 +753,12 @@ code {
 
   .panel-shell {
     min-height: 480px;
+  }
+
+  .hero h1 {
+    max-width: 100%;
+    line-height: 1.06;
+    letter-spacing: -0.032em;
   }
 }
 
@@ -685,15 +788,19 @@ code {
   }
 
   .hero h1 {
-    line-height: 1;
+    font-size: clamp(2.5rem, 12vw, 4.2rem);
+    line-height: 1.08;
+    letter-spacing: -0.028em;
+    max-width: 100%;
   }
 
   .lede {
+    max-width: 100%;
     font-size: 1rem;
   }
 
   .panel-shell {
-    min-height: 420px;
+    min-height: 390px;
     padding: 18px;
   }
 
@@ -716,6 +823,15 @@ code {
     height: 94px;
   }
 
+  .logo-card img {
+    max-width: 108px;
+  }
+
+  .section-head h2,
+  .cta-card h2 {
+    line-height: 1.06;
+  }
+
   .cta-card {
     padding: 24px;
   }
@@ -723,6 +839,10 @@ code {
   .footer-inner {
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  .firefly {
+    opacity: 0.72;
   }
 }
 

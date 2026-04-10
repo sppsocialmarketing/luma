@@ -1,4 +1,4 @@
-Luma luxury website
+Luma full firefly luxury website
 
 Files:
 - index.html
@@ -13,8 +13,5 @@ Folders:
 How to replace a logo:
 1. Put your new SVG, PNG, or WebP into assets/brands/
 2. Open index.html
-3. Replace the matching image path, for example:
+3. Replace the matching image path if needed, for example:
    assets/brands/brand-01.svg
-
-Tip:
-Keep logos mostly white or light-toned for this dark layout unless you want a stronger color moment.
