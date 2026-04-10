@@ -879,3 +879,116 @@ code {
 body {
   background-attachment: fixed;
 }
+
+
+/* ===== Firefly viewport lock fix ===== */
+html, body {
+  transform: none !important;
+}
+
+.firefly-layer {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.firefly-layer .firefly {
+  position: fixed;
+  width: var(--size, 8px);
+  height: var(--size, 8px);
+  left: var(--left, 50vw);
+  top: var(--top, 50vh);
+  border-radius: 999px;
+  background:
+    radial-gradient(circle at 35% 35%, #fff8d9 0%, #ffe79c 28%, #f3c967 56%, rgba(243, 201, 103, 0.2) 72%, rgba(243, 201, 103, 0) 100%);
+  box-shadow:
+    0 0 10px rgba(243, 201, 103, 0.95),
+    0 0 22px rgba(243, 201, 103, 0.45),
+    0 0 42px rgba(243, 201, 103, 0.16);
+  opacity: 0.86;
+  will-change: transform, opacity;
+  transform: translate3d(0,0,0);
+}
+
+.firefly-layer .firefly::before {
+  content: "";
+  position: absolute;
+  inset: -12px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(243, 201, 103, 0.16) 0%, rgba(243, 201, 103, 0) 72%);
+  animation: fireflyPulse var(--pulse, 3.2s) ease-in-out infinite;
+}
+
+.firefly-layer .ff1 { --left: 8vw;  --top: 16vh; --size: 8px; --pulse: 3.2s; animation: fly1 18s ease-in-out infinite; }
+.firefly-layer .ff2 { --left: 18vw; --top: 68vh; --size: 6px; --pulse: 3.7s; animation: fly2 22s ease-in-out infinite; }
+.firefly-layer .ff3 { --left: 34vw; --top: 28vh; --size: 8px; --pulse: 3.1s; animation: fly3 20s ease-in-out infinite; }
+.firefly-layer .ff4 { --left: 52vw; --top: 74vh; --size: 7px; --pulse: 4.1s; animation: fly4 24s ease-in-out infinite; }
+.firefly-layer .ff5 { --left: 68vw; --top: 18vh; --size: 8px; --pulse: 3.5s; animation: fly5 19s ease-in-out infinite; }
+.firefly-layer .ff6 { --left: 82vw; --top: 58vh; --size: 6px; --pulse: 3.9s; animation: fly6 23s ease-in-out infinite; }
+.firefly-layer .ff7 { --left: 74vw; --top: 34vh; --size: 8px; --pulse: 3.0s; animation: fly7 21s ease-in-out infinite; }
+.firefly-layer .ff8 { --left: 24vw; --top: 48vh; --size: 7px; --pulse: 4.2s; animation: fly8 26s ease-in-out infinite; }
+
+@keyframes fireflyPulse {
+  0%, 100% { opacity: 0.55; transform: scale(0.9); }
+  35% { opacity: 1; transform: scale(1.05); }
+  60% { opacity: 0.72; transform: scale(0.96); }
+}
+
+@keyframes fly1 {
+  0%,100% { transform: translate3d(0,0,0) scale(1); }
+  25% { transform: translate3d(26px,-22px,0) scale(1.08); }
+  50% { transform: translate3d(48px,14px,0) scale(0.94); }
+  75% { transform: translate3d(10px,34px,0) scale(1.03); }
+}
+@keyframes fly2 {
+  0%,100% { transform: translate3d(0,0,0) scale(1); }
+  20% { transform: translate3d(-22px,-18px,0) scale(1.04); }
+  50% { transform: translate3d(18px,-38px,0) scale(0.92); }
+  80% { transform: translate3d(30px,-12px,0) scale(1.02); }
+}
+@keyframes fly3 {
+  0%,100% { transform: translate3d(0,0,0) scale(1); }
+  30% { transform: translate3d(34px,12px,0) scale(1.05); }
+  60% { transform: translate3d(-10px,36px,0) scale(0.94); }
+  85% { transform: translate3d(18px,-8px,0) scale(1.03); }
+}
+@keyframes fly4 {
+  0%,100% { transform: translate3d(0,0,0) scale(1); }
+  25% { transform: translate3d(-28px,-24px,0) scale(1.03); }
+  55% { transform: translate3d(12px,-42px,0) scale(0.93); }
+  80% { transform: translate3d(34px,-8px,0) scale(1.05); }
+}
+@keyframes fly5 {
+  0%,100% { transform: translate3d(0,0,0) scale(1); }
+  20% { transform: translate3d(20px,18px,0) scale(1.04); }
+  45% { transform: translate3d(-16px,34px,0) scale(0.95); }
+  75% { transform: translate3d(-30px,-10px,0) scale(1.02); }
+}
+@keyframes fly6 {
+  0%,100% { transform: translate3d(0,0,0) scale(1); }
+  22% { transform: translate3d(-24px,14px,0) scale(1.02); }
+  52% { transform: translate3d(-40px,-20px,0) scale(0.93); }
+  78% { transform: translate3d(6px,-34px,0) scale(1.04); }
+}
+@keyframes fly7 {
+  0%,100% { transform: translate3d(0,0,0) scale(1); }
+  28% { transform: translate3d(24px,-16px,0) scale(1.05); }
+  58% { transform: translate3d(-8px,22px,0) scale(0.94); }
+  82% { transform: translate3d(-32px,6px,0) scale(1.02); }
+}
+@keyframes fly8 {
+  0%,100% { transform: translate3d(0,0,0) scale(1); }
+  26% { transform: translate3d(16px,-28px,0) scale(1.03); }
+  48% { transform: translate3d(42px,-6px,0) scale(0.95); }
+  74% { transform: translate3d(10px,22px,0) scale(1.04); }
+}
+
+@media (max-width: 760px) {
+  .firefly-layer .firefly {
+    opacity: 0.72;
+  }
+}
