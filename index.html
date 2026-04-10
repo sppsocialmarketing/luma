@@ -1,60 +1,209 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Luma</title>
-<link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Luma — Brand Collective</title>
+  <meta
+    name="description"
+    content="Luma is a Washington-based cannabis brand collective spanning flower, extracts, and edibles."
+  />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <div class="bg-glow glow-a"></div>
+  <div class="bg-glow glow-b"></div>
+  <div class="bg-noise"></div>
 
-<header class="hero">
-    <h1>Luma</h1>
-    <p class="tagline">Building standout cannabis brands across every tier of the market.</p>
-</header>
+  <header class="site-header">
+    <div class="container nav">
+      <a href="#" class="brand-lockup" aria-label="Luma home">
+        <span class="brand-orb"></span>
+        <span class="brand-word">Luma</span>
+      </a>
 
-<section class="about">
-    <h2>About</h2>
-    <p>
-    Luma is a Washington-based cannabis brand collective focused on creating and scaling products that actually move —
-    from cost-effective everyday options to premium, high-end experiences.
-    </p>
-    <p>
-    We work behind the scenes with licensed operators to support brand development, positioning, and go-to-market execution —
-    without the noise and without the plant-touching side of the business.
-    </p>
-</section>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="#brands">Brands</a>
+        <a href="#categories">Categories</a>
+        <a href="#positioning">Positioning</a>
+      </nav>
 
-<section class="categories">
-    <h2>Products</h2>
-    <div class="grid">
-        <div class="card">
+      <a class="button button-ghost" href="#brands">View Brands</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero container">
+      <div class="hero-copy">
+        <p class="eyebrow">Washington Cannabis Brand Collective</p>
+        <h1>Luxury-minded brand building for every tier of the shelf.</h1>
+        <p class="lede">
+          Luma is the holding company behind a growing portfolio of cannabis brands across flower,
+          extracts, and edibles — from accessible daily products to premium, high-end experiences.
+        </p>
+
+        <div class="hero-actions">
+          <a class="button button-primary" href="#brands">Explore the Portfolio</a>
+          <a class="button button-secondary" href="#categories">View Categories</a>
+        </div>
+
+        <div class="stat-row" aria-label="Product categories">
+          <div class="stat-pill">Flower</div>
+          <div class="stat-pill">Extracts</div>
+          <div class="stat-pill">Edibles</div>
+        </div>
+      </div>
+
+      <div class="hero-panel">
+        <div class="panel-shell">
+          <div class="panel-shine"></div>
+          <div class="panel-top">
+            <span class="mini-label">Luma</span>
+            <span class="mini-dot"></span>
+          </div>
+
+          <div class="panel-center">
+            <div class="orbital-ring orbital-ring-one"></div>
+            <div class="orbital-ring orbital-ring-two"></div>
+            <div class="center-orb"></div>
+          </div>
+
+          <div class="panel-bottom">
+            <div class="panel-tag">Brand Portfolio</div>
+            <div class="panel-tag">Creative Direction</div>
+            <div class="panel-tag">Market Execution</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="brands" class="section section-tight">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Brand Portfolio</p>
+          <h2>A clean home for distinct brands.</h2>
+        </div>
+
+        <div class="logo-rail-wrap">
+          <div class="logo-fade logo-fade-left"></div>
+          <div class="logo-fade logo-fade-right"></div>
+
+          <div class="logo-rail" aria-label="Brand logo carousel">
+            <div class="logo-track">
+              <div class="logo-card"><img src="assets/brands/brand-01.svg" alt="Brand placeholder one"></div>
+              <div class="logo-card"><img src="assets/brands/brand-02.svg" alt="Brand placeholder two"></div>
+              <div class="logo-card"><img src="assets/brands/brand-03.svg" alt="Brand placeholder three"></div>
+              <div class="logo-card"><img src="assets/brands/brand-04.svg" alt="Brand placeholder four"></div>
+              <div class="logo-card"><img src="assets/brands/brand-05.svg" alt="Brand placeholder five"></div>
+              <div class="logo-card"><img src="assets/brands/brand-06.svg" alt="Brand placeholder six"></div>
+
+              <div class="logo-card"><img src="assets/brands/brand-01.svg" alt=""></div>
+              <div class="logo-card"><img src="assets/brands/brand-02.svg" alt=""></div>
+              <div class="logo-card"><img src="assets/brands/brand-03.svg" alt=""></div>
+              <div class="logo-card"><img src="assets/brands/brand-04.svg" alt=""></div>
+              <div class="logo-card"><img src="assets/brands/brand-05.svg" alt=""></div>
+              <div class="logo-card"><img src="assets/brands/brand-06.svg" alt=""></div>
+            </div>
+          </div>
+        </div>
+
+        <p class="micro-note">
+          Swap any placeholder logo by replacing the matching SVG inside <code>assets/brands/</code>.
+        </p>
+      </div>
+    </section>
+
+    <section id="categories" class="section">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Categories</p>
+          <h2>Built to move across the market.</h2>
+        </div>
+
+        <div class="category-grid">
+          <article class="lux-card">
+            <div class="lux-line"></div>
             <h3>Flower</h3>
-            <p>High-quality selections built for consistency, shelf appeal, and real demand.</p>
-        </div>
-        <div class="card">
+            <p>Clean shelf presence, focused positioning, and products designed to hold attention.</p>
+          </article>
+
+          <article class="lux-card">
+            <div class="lux-line"></div>
             <h3>Extracts</h3>
-            <p>Clean, potent concentrates designed for modern consumers who expect performance.</p>
-        </div>
-        <div class="card">
+            <p>Modern concentrate brands shaped around clarity, performance, and premium perception.</p>
+          </article>
+
+          <article class="lux-card">
+            <div class="lux-line"></div>
             <h3>Edibles</h3>
-            <p>Reliable, approachable products crafted for both new users and experienced consumers.</p>
+            <p>Approachable offerings with room for both value-driven lines and elevated product stories.</p>
+          </article>
         </div>
+      </div>
+    </section>
+
+    <section id="positioning" class="section">
+      <div class="container positioning-grid">
+        <div class="section-head position-copy">
+          <p class="eyebrow">Positioning</p>
+          <h2>Brand-first. Market-aware. Non-plant-touching.</h2>
+          <p class="section-text">
+            Luma exists to shape and support cannabis brands with sharper identity, stronger presentation,
+            and a cleaner path to market.
+          </p>
+        </div>
+
+        <div class="feature-stack">
+          <article class="feature-card">
+            <span class="feature-kicker">01</span>
+            <h3>Brand Systems</h3>
+            <p>Identity, creative direction, packaging language, and visual consistency across lines.</p>
+          </article>
+
+          <article class="feature-card">
+            <span class="feature-kicker">02</span>
+            <h3>Portfolio Clarity</h3>
+            <p>A portfolio architecture that lets value, core, and premium products feel intentional.</p>
+          </article>
+
+          <article class="feature-card">
+            <span class="feature-kicker">03</span>
+            <h3>Retail Readiness</h3>
+            <p>Built for real-world shelves, store conversations, and long-term brand recognition.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-tight">
+      <div class="container cta-shell">
+        <div class="cta-card">
+          <p class="eyebrow">Luma</p>
+          <h2>One portfolio. Multiple brands. Clear direction.</h2>
+          <a class="button button-primary" href="#brands">View Brand Area</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <span class="brand-orb"></span>
+        <span class="brand-word">Luma</span>
+      </div>
+
+      <div class="footer-meta">
+        <span>Washington State</span>
+        <span class="footer-divider"></span>
+        <span>Flower · Extracts · Edibles</span>
+      </div>
     </div>
-</section>
+  </footer>
 
-<section class="brands">
-    <h2>Our Brands</h2>
-    <div class="grid">
-        <div class="brand-card">Brand Placeholder</div>
-        <div class="brand-card">Brand Placeholder</div>
-        <div class="brand-card">Brand Placeholder</div>
-    </div>
-</section>
-
-<footer>
-    <p>© Luma</p>
-</footer>
-
+  <script src="script.js"></script>
 </body>
 </html>
