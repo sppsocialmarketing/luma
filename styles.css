@@ -722,3 +722,74 @@ code {
     align-items: flex-start;
   }
 }
+
+
+/* ==== simplified hero / remove firefly layer ==== */
+#firefly-layer,
+.firefly,
+.firefly::before,
+.hero-preview,
+.preview-card,
+.preview-head,
+.preview-grid,
+.preview-logo-card,
+.preview-copy {
+  display: none !important;
+}
+
+.hero {
+  display: block;
+  min-height: auto;
+  padding: 82px 0 54px;
+}
+
+.hero-copy-full {
+  max-width: 860px;
+}
+
+.hero h1 {
+  max-width: 900px;
+  font-size: clamp(3.1rem, 7vw, 6.2rem);
+  line-height: 1.04;
+  letter-spacing: -0.03em;
+  margin-bottom: 0;
+}
+
+.lede {
+  max-width: 760px;
+}
+
+.site-header {
+  padding-top: 18px;
+}
+
+@media (max-width: 1040px) {
+  .hero {
+    padding-top: 56px;
+  }
+}
+
+@media (max-width: 760px) {
+  .hero {
+    padding: 44px 0 24px;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.5rem, 12vw, 4.3rem);
+    line-height: 1.07;
+    letter-spacing: -0.025em;
+  }
+
+  .lede {
+    font-size: 1rem;
+  }
+
+  .stat-row {
+    gap: 10px;
+  }
+
+  .stat-pill {
+    padding: 10px 13px;
+    font-size: 0.9rem;
+  }
+}
