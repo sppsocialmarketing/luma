@@ -858,3 +858,24 @@ code {
     transition: none !important;
   }
 }
+
+
+/* viewport-locked fireflies update */
+.fireflies {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.firefly {
+  will-change: transform, opacity;
+  transform: translate3d(0,0,0);
+}
+
+body {
+  background-attachment: fixed;
+}
