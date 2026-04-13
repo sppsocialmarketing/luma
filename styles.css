@@ -831,3 +831,63 @@ code {
     max-height: 86px !important;
   }
 }
+
+
+
+/* === Replace dot with real Luma mark without changing layout === */
+.brand-orb {
+  display: none !important;
+}
+
+.brand-logo {
+  width: 22px;
+  height: 22px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+}
+
+.brand-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  filter: drop-shadow(0 0 6px rgba(243, 201, 103, 0.55));
+  animation: lumaLogoPulse 3.6s ease-in-out infinite;
+  transition: filter 220ms ease, transform 220ms ease;
+}
+
+.brand-lockup:hover .brand-logo img,
+.footer-brand:hover .brand-logo img {
+  filter: drop-shadow(0 0 10px rgba(243, 201, 103, 0.78));
+  transform: scale(1.05);
+}
+
+.brand-logo-footer {
+  width: 20px;
+  height: 20px;
+}
+
+@keyframes lumaLogoPulse {
+  0%, 100% {
+    filter: drop-shadow(0 0 4px rgba(243, 201, 103, 0.38));
+    transform: scale(1);
+  }
+  50% {
+    filter: drop-shadow(0 0 9px rgba(243, 201, 103, 0.72));
+    transform: scale(1.045);
+  }
+}
+
+@media (max-width: 760px) {
+  .brand-logo {
+    width: 20px;
+    height: 20px;
+  }
+
+  .brand-logo-footer {
+    width: 18px;
+    height: 18px;
+  }
+}
