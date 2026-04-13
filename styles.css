@@ -891,3 +891,115 @@ code {
     height: 18px;
   }
 }
+
+
+.disclaimer {
+  margin-top: 20px;
+  padding: 20px;
+  font-size: 0.75rem;
+  line-height: 1.6;
+  color: rgba(255,255,255,0.6);
+  border-top: 1px solid rgba(255,255,255,0.08);
+  text-align: center;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+/* collapsible legal disclaimer */
+.disclaimer {
+  display: none !important;
+}
+
+.disclaimer-wrap {
+  margin-top: 20px;
+  max-width: 980px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 20px;
+}
+
+.disclaimer-details {
+  border-top: 1px solid rgba(255,255,255,0.08);
+  padding-top: 14px;
+}
+
+.disclaimer-summary {
+  list-style: none;
+  cursor: pointer;
+  user-select: none;
+  color: rgba(255,255,255,0.72);
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 600;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.disclaimer-summary::-webkit-details-marker {
+  display: none;
+}
+
+.disclaimer-summary::after {
+  content: "+";
+  font-size: 0.95rem;
+  line-height: 1;
+  opacity: 0.8;
+  transition: transform 180ms ease;
+}
+
+.disclaimer-details[open] .disclaimer-summary::after {
+  transform: rotate(45deg);
+}
+
+.disclaimer-body {
+  font-size: 0.75rem;
+  line-height: 1.6;
+  color: rgba(255,255,255,0.6);
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Desktop: always visible, no dropdown label */
+@media (min-width: 761px) {
+  .disclaimer-details {
+    padding-top: 16px;
+  }
+
+  .disclaimer-body {
+    display: block !important;
+  }
+}
+
+/* Mobile: collapsed by default */
+@media (max-width: 760px) {
+  .disclaimer-wrap {
+    padding: 0 16px;
+  }
+
+  .disclaimer-details {
+    padding-top: 12px;
+  }
+
+  .disclaimer-summary {
+    display: inline-flex;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .disclaimer-details:not([open]) .disclaimer-body {
+    display: none;
+  }
+
+  .disclaimer-body {
+    padding-top: 12px;
+    text-align: left;
+    font-size: 0.72rem;
+    line-height: 1.55;
+  }
+}
