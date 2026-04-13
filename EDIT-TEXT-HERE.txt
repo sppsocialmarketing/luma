@@ -1,0 +1,15 @@
+Edit your website copy in data.js
+
+Main text fields:
+- heroTitle
+- heroText
+- brandsTitle
+- categoriesTitle
+- approachTitle
+- approachText
+- cat1Title / cat1Text
+- cat2Title / cat2Text
+- cat3Title / cat3Text
+
+Your brand SVG files in assets/brands/ were left untouched.
+The bottom CTA tile was removed.

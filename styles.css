@@ -793,24 +793,3 @@ code {
     font-size: 0.9rem;
   }
 }
-
-
-
-/* === Carousel logo size fix === */
-.logo-card {
-  width: 240px !important;
-  height: 130px !important;
-}
-
-.logo-card img {
-  width: auto !important;
-  height: auto !important;
-  max-width: 85% !important;
-  max-height: 70px !important;
-  object-fit: contain !important;
-}
-
-/* optional boost for smaller logos */
-.logo-large img {
-  max-height: 90px !important;
-}
