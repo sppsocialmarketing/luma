@@ -793,3 +793,41 @@ code {
     font-size: 0.9rem;
   }
 }
+
+
+/* === Combat small logo sizing in carousel === */
+.logo-card {
+  width: 260px !important;
+  height: 150px !important;
+  padding: 0 !important;
+}
+
+.logo-card img {
+  width: auto !important;
+  height: auto !important;
+  max-width: 90% !important;
+  max-height: 90px !important;
+  object-fit: contain !important;
+}
+
+/* Use on logos that visually read small because of internal whitespace */
+.logo-boost img {
+  max-width: 98% !important;
+  max-height: 118px !important;
+}
+
+@media (max-width: 760px) {
+  .logo-card {
+    width: 190px !important;
+    height: 112px !important;
+  }
+
+  .logo-card img {
+    max-width: 92% !important;
+    max-height: 72px !important;
+  }
+
+  .logo-boost img {
+    max-height: 86px !important;
+  }
+}
