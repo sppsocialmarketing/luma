@@ -273,3 +273,10 @@ h1 {
     display: none;
   }
 }
+
+
+/* slower round ember particle tuning */
+#ember-canvas {
+  opacity: 0.82;
+  mix-blend-mode: screen;
+}

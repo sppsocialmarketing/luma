@@ -25,55 +25,71 @@
     return Math.random() * (max - min) + min;
   }
 
-  function makeParticle(resetY = true) {
+  function makeEmber(startOffscreen = true) {
+    const size = rand(1.4, 5.6);
     return {
-      x: rand(0, width),
-      y: resetY ? rand(height * 0.72, height + 80) : rand(0, height),
-      r: rand(1.2, 3.8),
-      length: rand(8, 24),
-      vx: rand(-0.14, 0.14),
-      vy: rand(-0.34, -0.86),
-      life: rand(0.45, 1),
+      x: rand(-40, width + 40),
+      y: startOffscreen ? rand(height + 20, height + 180) : rand(0, height),
+      size,
+      vx: rand(-0.018, 0.018),
+      vy: rand(-0.045, -0.135),
+      life: rand(0.72, 1),
+      decay: rand(0.000045, 0.000105),
       flicker: rand(0, Math.PI * 2),
-      wobble: rand(0.4, 1.5),
-      hue: rand(24, 44),
-      drift: rand(-0.9, 0.9)
+      flickerSpeed: rand(0.0014, 0.0038),
+      drift: rand(-0.018, 0.018),
+      warm: rand(0, 1),
+      wobbleAmp: rand(0.012, 0.04)
     };
   }
 
   function init() {
     resize();
-    const count = Math.min(95, Math.max(42, Math.floor(width / 18)));
-    particles = Array.from({ length: count }, () => makeParticle(false));
+    const count = Math.min(70, Math.max(34, Math.floor(width / 26)));
+    particles = Array.from({ length: count }, () => makeEmber(false));
   }
 
-  function drawParticle(p, dt) {
-    p.flicker += dt * 0.004 * p.wobble;
+  function drawEmber(p, dt) {
+    p.flicker += dt * p.flickerSpeed;
 
-    const localWind = wind + Math.sin(p.flicker) * p.drift;
-    p.x += (p.vx + localWind) * dt;
+    const wobble = Math.sin(p.flicker) * p.wobbleAmp;
+    p.x += (p.vx + p.drift + wind + wobble) * dt;
     p.y += p.vy * dt;
-    p.life -= dt * 0.000035;
+    p.life -= p.decay * dt;
 
-    if (p.y < -60 || p.x < -80 || p.x > width + 80 || p.life <= 0) {
-      Object.assign(p, makeParticle(true));
-      p.life = rand(0.65, 1);
+    if (p.life <= 0 || p.y < -80 || p.x < -120 || p.x > width + 120) {
+      Object.assign(p, makeEmber(true));
     }
 
-    const alpha = Math.max(0, Math.min(1, p.life)) * (0.55 + Math.sin(p.flicker * 2.2) * 0.25);
-    const grad = ctx.createLinearGradient(p.x, p.y, p.x + localWind * 30, p.y - p.length);
-    grad.addColorStop(0, `hsla(${p.hue}, 100%, 62%, 0)`);
-    grad.addColorStop(0.42, `hsla(${p.hue}, 100%, 62%, ${alpha})`);
-    grad.addColorStop(1, `hsla(45, 100%, 78%, ${alpha * 0.85})`);
+    const flicker = 0.72 + Math.sin(p.flicker * 2.4) * 0.18 + Math.sin(p.flicker * 0.7) * 0.1;
+    const alpha = Math.max(0, Math.min(1, p.life * flicker));
+    const radius = p.size * (0.85 + Math.sin(p.flicker * 1.5) * 0.12);
+
+    const hue = p.warm > 0.55 ? 34 : 22;
+    const core = p.warm > 0.55 ? "255, 214, 116" : "255, 135, 45";
+    const edge = p.warm > 0.55 ? "255, 112, 31" : "255, 67, 20";
+
+    const glow = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, radius * 5.6);
+    glow.addColorStop(0, `rgba(${core}, ${alpha * 0.95})`);
+    glow.addColorStop(0.24, `rgba(${core}, ${alpha * 0.5})`);
+    glow.addColorStop(0.58, `rgba(${edge}, ${alpha * 0.18})`);
+    glow.addColorStop(1, `rgba(${edge}, 0)`);
 
     ctx.save();
-    ctx.translate(p.x, p.y);
-    ctx.rotate((localWind * 0.8) + 0.18);
-    ctx.fillStyle = grad;
-    ctx.shadowColor = `hsla(${p.hue}, 100%, 62%, ${alpha})`;
-    ctx.shadowBlur = 12;
+    ctx.globalCompositeOperation = "lighter";
+    ctx.fillStyle = glow;
     ctx.beginPath();
-    ctx.roundRect(-p.r / 2, -p.length, p.r, p.length, p.r);
+    ctx.arc(p.x, p.y, radius * 5.6, 0, Math.PI * 2);
+    ctx.fill();
+
+    const ember = ctx.createRadialGradient(p.x - radius * 0.25, p.y - radius * 0.25, 0, p.x, p.y, radius);
+    ember.addColorStop(0, `rgba(255, 241, 186, ${alpha})`);
+    ember.addColorStop(0.45, `rgba(${core}, ${alpha * 0.92})`);
+    ember.addColorStop(1, `rgba(${edge}, ${alpha * 0.22})`);
+
+    ctx.fillStyle = ember;
+    ctx.beginPath();
+    ctx.arc(p.x, p.y, radius, 0, Math.PI * 2);
     ctx.fill();
     ctx.restore();
   }
@@ -82,17 +98,18 @@
     const dt = Math.min(34, now - last);
     last = now;
 
-    if (!reduceMotion) {
-      ctx.clearRect(0, 0, width, height);
+    if (reduceMotion) return;
 
-      if (Math.random() < 0.012) {
-        windTarget = rand(-0.08, 0.08);
-      }
-      wind += (windTarget - wind) * 0.018;
+    ctx.clearRect(0, 0, width, height);
 
-      particles.forEach((p) => drawParticle(p, dt));
-      requestAnimationFrame(tick);
+    // Random, slow wind changes. Enough to feel organic, not chaotic.
+    if (Math.random() < 0.006) {
+      windTarget = rand(-0.035, 0.035);
     }
+    wind += (windTarget - wind) * 0.012;
+
+    particles.forEach((p) => drawEmber(p, dt));
+    requestAnimationFrame(tick);
   }
 
   window.addEventListener("resize", init);
