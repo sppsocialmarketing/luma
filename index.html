@@ -11,36 +11,23 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <div class="sparks" aria-hidden="true">
-    <span class="spark spark-1"></span>
-    <span class="spark spark-2"></span>
-    <span class="spark spark-3"></span>
-    <span class="spark spark-4"></span>
-    <span class="spark spark-5"></span>
-    <span class="spark spark-6"></span>
-    <span class="spark spark-7"></span>
-    <span class="spark spark-8"></span>
-    <span class="spark spark-9"></span>
-    <span class="spark spark-10"></span>
-  </div>
-
-  <div class="ember-glow glow-one"></div>
-  <div class="ember-glow glow-two"></div>
+  <canvas id="ember-canvas" aria-hidden="true"></canvas>
+  <div class="heat heat-one"></div>
+  <div class="heat heat-two"></div>
   <div class="grain"></div>
 
   <main class="page">
-    <section class="splash">
-      <div class="logo-stage">
-        <img src="assets/logo/ember-logo.svg" alt="Ember Collective logo" class="logo" />
-      </div>
+    <section class="hero">
+      <img src="assets/logo/ember-logo.svg" alt="Ember Collective logo" class="logo" />
 
       <div class="copy">
+        <p class="kicker">Coming Soon</p>
         <h1>Something new is catching fire.</h1>
+      </div>
 
-        <div class="status-row">
-          <span class="pulse-dot"></span>
-          <span>Coming Soon</span>
-        </div>
+      <div class="status-row">
+        <span class="pulse-dot"></span>
+        <span>Ember Collective</span>
       </div>
     </section>
 
@@ -50,5 +37,7 @@
       <span>Washington State</span>
     </footer>
   </main>
+
+  <script src="script.js"></script>
 </body>
 </html>
