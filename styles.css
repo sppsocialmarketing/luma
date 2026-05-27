@@ -318,3 +318,43 @@ h1 {
     margin-top: 28px !important;
   }
 }
+
+
+/* === Clean logo lockup update === */
+.eyebrow {
+  display: none !important;
+}
+
+.logo-shell {
+  width: clamp(220px, 30vw, 340px) !important;
+  height: clamp(170px, 23vw, 250px) !important;
+  margin-bottom: 34px !important;
+  padding: 22px !important;
+}
+
+.logo {
+  width: 100% !important;
+  height: 100% !important;
+  max-width: 300px !important;
+  max-height: 220px !important;
+  object-fit: contain !important;
+  object-position: center !important;
+}
+
+h1 {
+  margin-top: 0 !important;
+}
+
+@media (max-width: 700px) {
+  .logo-shell {
+    width: clamp(190px, 66vw, 280px) !important;
+    height: clamp(150px, 52vw, 220px) !important;
+    margin-bottom: 28px !important;
+    padding: 18px !important;
+  }
+
+  .logo {
+    max-width: 250px !important;
+    max-height: 185px !important;
+  }
+}
