@@ -1,11 +1,9 @@
-Luma clean firefly website
+Ember Collective Coming Soon Site
 
-Files:
-- index.html
-- styles.css
-- script.js
+Logo:
+- Replace assets/logo/ember-logo.svg with your real Ember Collective SVG logo.
+- Keep the same filename if you do not want to edit the HTML.
 
-Folders:
-- assets/brands/   Replace placeholder logo SVGs here
-- assets/products/ Product images can go here later
-- assets/ui/       UI graphics or icons can go here
+Deploy:
+1. Upload/push these files to your GitHub repo.
+2. Vercel will deploy automatically if the repo is connected.
