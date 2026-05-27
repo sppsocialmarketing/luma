@@ -298,3 +298,141 @@ h1 {
     transition: none !important;
   }
 }
+
+
+/* === Heated modern upgrade === */
+body {
+  background:
+    radial-gradient(circle at 50% 18%, rgba(255, 194, 79, 0.18), transparent 20%),
+    radial-gradient(circle at 74% 68%, rgba(255, 74, 18, 0.22), transparent 30%),
+    radial-gradient(circle at 15% 74%, rgba(255, 132, 38, 0.12), transparent 24%),
+    linear-gradient(180deg, #05254d 0%, #03101f 100%) !important;
+}
+
+.splash {
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.09), rgba(255,255,255,0.025)),
+    linear-gradient(135deg, rgba(255, 122, 33, 0.08), transparent 42%),
+    rgba(4, 18, 35, 0.58) !important;
+  box-shadow:
+    0 38px 130px rgba(0,0,0,0.48),
+    0 0 90px rgba(255, 82, 22, 0.11),
+    inset 0 1px 0 rgba(255,255,255,0.075) !important;
+}
+
+.splash::after {
+  content: "";
+  position: absolute;
+  inset: auto -10% -35% -10%;
+  height: 55%;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse at center, rgba(255, 95, 24, 0.16), transparent 62%);
+  filter: blur(18px);
+}
+
+.logo-stage {
+  background:
+    radial-gradient(circle at 50% 45%, rgba(255, 194, 79, 0.26), transparent 58%),
+    linear-gradient(180deg, rgba(255,255,255,0.075), rgba(255,255,255,0.02)),
+    rgba(255,255,255,0.035) !important;
+  box-shadow:
+    0 26px 80px rgba(0,0,0,0.28),
+    0 0 70px rgba(255, 122, 33, 0.10),
+    inset 0 1px 0 rgba(255,255,255,0.06) !important;
+}
+
+h1 {
+  text-shadow:
+    0 1px 0 rgba(255,255,255,0.02),
+    0 0 34px rgba(255, 194, 79, 0.08);
+}
+
+.status-row {
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.075), rgba(255,255,255,0.035)) !important;
+  box-shadow:
+    0 10px 30px rgba(0,0,0,0.22),
+    0 0 26px rgba(255, 122, 33, 0.08),
+    inset 0 1px 0 rgba(255,255,255,0.06) !important;
+}
+
+/* Sparks */
+.sparks {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.spark {
+  position: absolute;
+  width: 4px;
+  height: 14px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, rgba(255, 225, 138, 1), rgba(255, 115, 28, 0.08));
+  box-shadow:
+    0 0 8px rgba(255, 194, 79, 0.85),
+    0 0 18px rgba(255, 100, 24, 0.32);
+  opacity: 0;
+  transform: rotate(18deg);
+  animation: riseSpark linear infinite;
+}
+
+.spark-1 { left: 8%;  bottom: -10%; animation-duration: 9s;  animation-delay: 0s; }
+.spark-2 { left: 18%; bottom: -10%; animation-duration: 12s; animation-delay: -4s; width: 3px; height: 11px; }
+.spark-3 { left: 29%; bottom: -10%; animation-duration: 10s; animation-delay: -7s; }
+.spark-4 { left: 41%; bottom: -10%; animation-duration: 14s; animation-delay: -2s; width: 3px; height: 10px; }
+.spark-5 { left: 53%; bottom: -10%; animation-duration: 11s; animation-delay: -6s; }
+.spark-6 { left: 64%; bottom: -10%; animation-duration: 15s; animation-delay: -3s; width: 3px; height: 12px; }
+.spark-7 { left: 73%; bottom: -10%; animation-duration: 10s; animation-delay: -8s; }
+.spark-8 { left: 84%; bottom: -10%; animation-duration: 13s; animation-delay: -5s; width: 3px; height: 9px; }
+.spark-9 { left: 92%; bottom: -10%; animation-duration: 16s; animation-delay: -9s; }
+.spark-10 { left: 36%; bottom: -10%; animation-duration: 12s; animation-delay: -10s; width: 2px; height: 9px; }
+
+@keyframes riseSpark {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 0, 0) rotate(18deg) scale(0.75);
+  }
+  12% {
+    opacity: 0.85;
+  }
+  55% {
+    opacity: 0.72;
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(var(--spark-drift, 34px), -118vh, 0) rotate(28deg) scale(1.04);
+  }
+}
+
+.spark:nth-child(odd) {
+  --spark-drift: -42px;
+}
+
+.spark:nth-child(even) {
+  --spark-drift: 38px;
+}
+
+@media (max-width: 760px) {
+  .spark {
+    opacity: 0;
+    width: 3px;
+    height: 10px;
+  }
+
+  .splash {
+    box-shadow:
+      0 28px 90px rgba(0,0,0,0.44),
+      0 0 60px rgba(255, 82, 22, 0.10),
+      inset 0 1px 0 rgba(255,255,255,0.06) !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .spark {
+    display: none !important;
+  }
+}
