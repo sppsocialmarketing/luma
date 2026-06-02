@@ -1,9 +1,17 @@
-Ember Collective Coming Soon Site
+Ember Northwest Website
 
 Logo:
-- Replace assets/logo/ember-logo.svg with your real Ember Collective SVG logo.
-- Keep the same filename if you do not want to edit the HTML.
+- Put your main logo at assets/logo/ember-logo.png
+
+Brands:
+- Put brand logos in assets/brands/
+- Current placeholders are brand-01.svg through brand-07.svg
+
+Brand Links:
+- Open index.html
+- Find each <a class="brand-card" href="#">
+- Replace # with the brand website URL
 
 Deploy:
-1. Upload/push these files to your GitHub repo.
-2. Vercel will deploy automatically if the repo is connected.
+- Push to GitHub
+- Vercel will deploy from the connected repo

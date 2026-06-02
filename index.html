@@ -3,36 +3,166 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ember Collective — Coming Soon</title>
-  <meta name="description" content="Ember Collective is coming soon." />
+  <title>Ember Northwest</title>
+  <meta name="description" content="Ember Northwest is a Washington cannabis producer focused on quality products, trusted partnerships, and customer service." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <canvas id="ember-canvas" aria-hidden="true"></canvas>
-  <div class="heat heat-one"></div>
-  <div class="heat heat-two"></div>
+  <div class="page-glow glow-one"></div>
+  <div class="page-glow glow-two"></div>
+  <div class="page-glow glow-three"></div>
   <div class="grain"></div>
 
-  <main class="page">
-    <section class="hero">
-      <img src="assets/logo/ember-logo.svg" alt="Ember Collective logo" class="logo" />
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand-lockup" href="#" aria-label="Ember Northwest home">
+        <img src="assets/logo/ember-logo.png" alt="Ember Northwest logo" class="nav-logo">
+      </a>
 
-      <div class="copy">
-        <p class="kicker">Coming Soon</p>
-        <h1>Something new is catching fire.</h1>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="#brands">Brands</a>
+        <a href="#about">About</a>
+        <a href="#service">Service</a>
+      </nav>
+
+      <a class="button button-small" href="#brands">Explore Brands</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero container">
+      <div class="hero-copy">
+        <p class="eyebrow">Washington Cannabis Producer</p>
+        <h1>Washington cannabis, built with care.</h1>
+        <p class="lede">
+          Ember Northwest is a legacy-minded producer behind a portfolio of cannabis brands made for real shelves, real stores, and real customers across Washington.
+        </p>
+
+        <div class="hero-actions">
+          <a class="button button-primary" href="#brands">View Our Brands</a>
+          <a class="button button-secondary" href="#service">How We Work</a>
+        </div>
       </div>
-</section>
 
-    <footer class="footer">
-      <span>© Ember Collective</span>
-      <span class="divider"></span>
-      <span>Washington State</span>
-    </footer>
+      <aside class="hero-panel" aria-label="Company highlights">
+        <div class="panel-stat">
+          <span>7</span>
+          <p>Brands supported under one Northwest team.</p>
+        </div>
+
+        <div class="panel-divider"></div>
+
+        <div class="panel-list">
+          <div>
+            <strong>Legacy Experience</strong>
+            <p>Years in Washington cannabis, shaped into dependable products and stronger retail relationships.</p>
+          </div>
+
+          <div>
+            <strong>Service First</strong>
+            <p>Clear communication, quick follow-up, and a team that actually cares after the order is placed.</p>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <section id="brands" class="section brand-section">
+      <div class="container">
+        <div class="section-head centered">
+          <p class="eyebrow">Brand Portfolio</p>
+          <h2>Seven brands. Different lanes. One dependable team.</h2>
+          <p>
+            Each brand has its own identity and audience, all backed by the same focus on consistency, care, and customer service.
+          </p>
+        </div>
+
+        <div class="brand-rail-wrap">
+          <div class="brand-rail" aria-label="Scrolling brand portfolio">
+            <div class="brand-track">
+              <a class="brand-card" href="#" target="_blank" rel="noopener"><img src="assets/brands/brand-01.svg" alt="Brand 01 logo"></a>
+              <a class="brand-card" href="#" target="_blank" rel="noopener"><img src="assets/brands/brand-02.svg" alt="Brand 02 logo"></a>
+              <a class="brand-card" href="#" target="_blank" rel="noopener"><img src="assets/brands/brand-03.svg" alt="Brand 03 logo"></a>
+              <a class="brand-card" href="#" target="_blank" rel="noopener"><img src="assets/brands/brand-04.svg" alt="Brand 04 logo"></a>
+              <a class="brand-card" href="#" target="_blank" rel="noopener"><img src="assets/brands/brand-05.svg" alt="Brand 05 logo"></a>
+              <a class="brand-card" href="#" target="_blank" rel="noopener"><img src="assets/brands/brand-06.svg" alt="Brand 06 logo"></a>
+              <a class="brand-card" href="#" target="_blank" rel="noopener"><img src="assets/brands/brand-07.svg" alt="Brand 07 logo"></a>
+
+              <a class="brand-card" href="#" target="_blank" rel="noopener" aria-hidden="true"><img src="assets/brands/brand-01.svg" alt=""></a>
+              <a class="brand-card" href="#" target="_blank" rel="noopener" aria-hidden="true"><img src="assets/brands/brand-02.svg" alt=""></a>
+              <a class="brand-card" href="#" target="_blank" rel="noopener" aria-hidden="true"><img src="assets/brands/brand-03.svg" alt=""></a>
+              <a class="brand-card" href="#" target="_blank" rel="noopener" aria-hidden="true"><img src="assets/brands/brand-04.svg" alt=""></a>
+              <a class="brand-card" href="#" target="_blank" rel="noopener" aria-hidden="true"><img src="assets/brands/brand-05.svg" alt=""></a>
+              <a class="brand-card" href="#" target="_blank" rel="noopener" aria-hidden="true"><img src="assets/brands/brand-06.svg" alt=""></a>
+              <a class="brand-card" href="#" target="_blank" rel="noopener" aria-hidden="true"><img src="assets/brands/brand-07.svg" alt=""></a>
+            </div>
+          </div>
+        </div>
+
+        <p class="edit-note">
+          Update brand logos in <code>assets/brands/</code>. Replace each card’s <code>href="#"</code> with the brand website URL.
+        </p>
+      </div>
+    </section>
+
+    <section id="about" class="section about-section">
+      <div class="container about-grid">
+        <div class="section-head">
+          <p class="eyebrow">About Ember Northwest</p>
+          <h2>Built on trust, service, and products people come back for.</h2>
+        </div>
+
+        <div class="text-card">
+          <p>
+            Ember Northwest is rooted in Washington’s cannabis industry. We believe strong products come from a strong team — people who care about the details, the stores, the customers, and the relationships behind every order.
+          </p>
+          <p>
+            We support a growing portfolio of cannabis brands while keeping the work grounded: consistent products, responsive service, and a team retailers can count on.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="service" class="section service-section">
+      <div class="container">
+        <div class="section-head centered">
+          <p class="eyebrow">How We Work</p>
+          <h2>Customer service is part of the product.</h2>
+        </div>
+
+        <div class="service-grid">
+          <article class="service-card">
+            <span>01</span>
+            <h3>Responsive</h3>
+            <p>Quick answers, clear follow-up, and simple communication from people who know the work.</p>
+          </article>
+
+          <article class="service-card">
+            <span>02</span>
+            <h3>Consistent</h3>
+            <p>Products and brands built with repeatability, shelf presence, and retailer confidence in mind.</p>
+          </article>
+
+          <article class="service-card">
+            <span>03</span>
+            <h3>Committed</h3>
+            <p>A team that takes pride in the details and respects the partners we serve.</p>
+          </article>
+        </div>
+      </div>
+    </section>
   </main>
 
-  <script src="script.js"></script>
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <img src="assets/logo/ember-logo.png" alt="Ember Northwest logo" class="footer-logo">
+      <div class="footer-text">
+        <span>Ember Northwest</span>
+        <span>Washington Cannabis Producer</span>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
