@@ -583,3 +583,68 @@ code {
     transition: none !important;
   }
 }
+
+
+/* === Slow ember background + mobile nav fix === */
+#ember-canvas {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.82;
+  mix-blend-mode: screen;
+}
+
+.edit-note {
+  display: none !important;
+}
+
+@media (max-width: 720px) {
+  .nav {
+    grid-template-columns: auto 1fr !important;
+    align-items: center !important;
+    justify-items: stretch !important;
+    gap: 14px !important;
+    border-radius: 999px !important;
+    padding: 12px 14px !important;
+  }
+
+  .brand-lockup {
+    min-width: 0;
+  }
+
+  .nav-logo {
+    width: 118px !important;
+    max-height: 42px !important;
+  }
+
+  .nav-links {
+    justify-content: flex-end !important;
+    gap: 12px !important;
+    font-size: 0.84rem !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .nav-links::-webkit-scrollbar {
+    display: none;
+  }
+
+  .nav-links a {
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 430px) {
+  .nav-logo {
+    width: 104px !important;
+  }
+
+  .nav-links {
+    gap: 10px !important;
+    font-size: 0.8rem !important;
+  }
+}
