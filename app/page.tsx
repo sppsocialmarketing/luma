@@ -1,3 +1,4 @@
+import Image from "next/image";
 import CountUp from "@/components/CountUp";
 import { CursorGlow } from "@/components/CursorGlow";
 
@@ -53,7 +54,13 @@ export default function Home() {
       <CursorGlow />
       <header className="siteHeader">
         <a className="logo" href="#top" aria-label="Ember Northwest home">
-          <span className="logoMark" />
+          <Image
+            src="/logo/ember-logo.png"
+            alt="Ember Northwest"
+            width={28}
+            height={28}
+            priority
+          />
           <span>Ember Northwest</span>
         </a>
         <nav aria-label="Primary navigation">
