@@ -1,15 +1,20 @@
-Ember Northwest Premium Website
+Ember Northwest Next.js Premium Site
 
-Replace assets/logo/ember-logo.png with your real PNG logo.
+Run locally:
+1. npm install
+2. npm run dev
+3. Open http://localhost:3000
 
-Replace brand SVGs in assets/brands/:
-- the-batch.svg
-- smokey-point.svg
-- regulator.svg
-- snocone.svg
-- 1up.svg
-- junes-edibles.svg
-- treat-edibles.svg
+Logo:
+- Replace public/assets/logo/ember-logo.png with your real PNG logo.
 
-Update brand links in index.html by replacing href="#".
-Static HTML/CSS/JS. No npm required.
+Brand logos:
+- Replace the SVGs in public/assets/brands/
+
+Brand links:
+- Open app/page.tsx
+- Update the href values in the brands array near the top.
+
+Deploy:
+- Push to GitHub
+- Connect/import repo in Vercel
