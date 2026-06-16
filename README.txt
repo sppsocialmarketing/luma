@@ -1,17 +1,15 @@
-Ember Northwest Website
+Ember Northwest Premium Website
 
-Logo:
-- Put your main logo at assets/logo/ember-logo.png
+Replace assets/logo/ember-logo.png with your real PNG logo.
 
-Brands:
-- Put brand logos in assets/brands/
-- Current placeholders are brand-01.svg through brand-07.svg
+Replace brand SVGs in assets/brands/:
+- the-batch.svg
+- smokey-point.svg
+- regulator.svg
+- snocone.svg
+- 1up.svg
+- junes-edibles.svg
+- treat-edibles.svg
 
-Brand Links:
-- Open index.html
-- Find each <a class="brand-card" href="#">
-- Replace # with the brand website URL
-
-Deploy:
-- Push to GitHub
-- Vercel will deploy from the connected repo
+Update brand links in index.html by replacing href="#".
+Static HTML/CSS/JS. No npm required.
