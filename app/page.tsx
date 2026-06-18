@@ -1,12 +1,12 @@
-import Image from "next/image";
 import CountUp from "@/components/CountUp";
 import { CursorGlow } from "@/components/CursorGlow";
+import Image from "next/image";
 
 const brands = [
   { n: "01", initials: "TB", name: "The Batch", role: "Limited releases", copy: "Small-batch drops with polished shelf presence and clear retail recognition.", href: "https://getthebatch.com" },
   { n: "02", initials: "SP", name: "Smokey Point", role: "Core cannabis", copy: "A familiar Washington name built around everyday confidence and consistency.", href: "https://google.com" },
-  { n: "03", initials: "RG", name: "Regulator", role: "Precision products", copy: "Clean, direct, and built around reliability across product formats.", href: "https://goregulator.com" },
-  { n: "04", initials: "SC", name: "SnoCone", role: "Infused joints", copy: "Bright, memorable, flavor-forward, and easy to recognize on shelf.", href: "https://google.com" },
+  { n: "03", initials: "RG", name: "Regulator", role: "Everyday Cannabis", copy: "Clean, direct, and built around reliability across product formats.", href: "https://goregulator.com" },
+  { n: "04", initials: "SC", name: "SnoCone", role: "Ice Cold Flavor", copy: "Triple infused joints, and vapes made for smooth sessions.", href: "https://snocone-premium-site.vercel.app/" },
   { n: "05", initials: "1U", name: "1UP", role: "Arcade cannabis", copy: "Collectible energy with a playful edge and bold visual presence.", href: "https://google.com" },
   { n: "06", initials: "JE", name: "Junes Edibles", role: "Edibles", copy: "Friendly, polished, approachable, and made for easy recognition.", href: "https://google.com" },
   { n: "07", initials: "TE", name: "Treat Edibles", role: "Edibles", copy: "Simple, craveable, dependable, and easy for customers to understand.", href: "https://google.com" },
@@ -54,13 +54,7 @@ export default function Home() {
       <CursorGlow />
       <header className="siteHeader">
         <a className="logo" href="#top" aria-label="Ember Northwest home">
-          <Image
-            src="/logo/ember-logo.png"
-            alt="Ember Northwest"
-            width={28}
-            height={28}
-            priority
-          />
+          <span className="logoMark" />
           <span>Ember Northwest</span>
         </a>
         <nav aria-label="Primary navigation">
