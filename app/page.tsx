@@ -20,18 +20,16 @@ const resources = [
 ];
 
 const retailPartners = [
-  "Herban Market",
-  "Kemps Cannabis",
-  "Bud Barn",
-  "High Point",
-  "Greenlight",
-  "Hangar 420",
-  "Primo Cannabis",
-  "i90 Greenhouse",
-  "420 Holiday",
-  "Clear Choice",
-  "Salish Coast",
-  "PRC Arlington",
+  "Nirvana",
+  "Bud Barns",
+  "Cannabis and Glass",
+  "Remedy",
+  "Herbal Nation",
+  "Cascade Kropz",
+  "Canna4life",
+  "420 Carpenter",
+  "Craft Cannabis",
+  "Lucky Leaf",
 ];
 
 const retailLoop = [...retailPartners, ...retailPartners];
