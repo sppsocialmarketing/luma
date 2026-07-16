@@ -3,55 +3,21 @@
 import Image from "next/image";
 import { useState } from "react";
 
-const navItems = [
-  { label: "House", href: "#house" },
-  { label: "Brands", href: "#brands" },
-  { label: "Standards", href: "#standards" },
-  { label: "Contact", href: "#contact" },
-];
+const links = [{ label: "The house", href: "#house" }, { label: "Brands", href: "#brands" }, { label: "Our standard", href: "#standards" }];
 
 export function Header() {
   const [open, setOpen] = useState(false);
-
-  return (
-    <header className="siteHeader">
-      <div className="headerShell">
-        <a className="logoLockup" href="#top" aria-label="Ember Northwest home">
-          <span className="logoMark">
-            <Image src="/assets/logo/ember-logo.png" alt="" width={34} height={34} priority />
-          </span>
-          <span>
-            <strong>Ember</strong>
-            <small>Northwest</small>
-          </span>
-        </a>
-
-        <nav className="mainNav" aria-label="Primary navigation">
-          {navItems.map((item) => (
-            <a key={item.href} href={item.href}>{item.label}</a>
-          ))}
-        </nav>
-
-        <div className="headerActions">
-          <a className="headerButton fillSweep" href="#brands">View brands</a>
-          <button
-            className="menuButton"
-            type="button"
-            aria-label="Toggle menu"
-            aria-expanded={open}
-            onClick={() => setOpen((value) => !value)}
-          >
-            <span />
-            <span />
-          </button>
-        </div>
-      </div>
-
-      <div className={`mobilePanel ${open ? "isOpen" : ""}`}>
-        {navItems.map((item) => (
-          <a key={item.href} href={item.href} onClick={() => setOpen(false)}>{item.label}</a>
-        ))}
-      </div>
-    </header>
-  );
+  return <header className="siteHeader">
+    <a className="logoLockup" href="#top" aria-label="Ember Northwest home">
+      <Image src="/logo/ember-logo.png" alt="" width={35} height={35} priority />
+      <strong>EMBER<br />NORTHWEST</strong>
+    </a>
+    <nav aria-label="Primary navigation">{links.map(link => <a key={link.href} href={link.href}>{link.label}</a>)}</nav>
+    <a className="headerContact" href="#contact">Get in touch <span>↗</span></a>
+    <button className={`menuButton ${open ? "open" : ""}`} onClick={() => setOpen(!open)} aria-expanded={open} aria-label="Toggle navigation"><span /><span /></button>
+    <div className={`mobileMenu ${open ? "open" : ""}`}>
+      {links.map(link => <a key={link.href} href={link.href} onClick={() => setOpen(false)}>{link.label}</a>)}
+      <a href="#contact" onClick={() => setOpen(false)}>Get in touch ↗</a>
+    </div>
+  </header>;
 }

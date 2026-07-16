@@ -1,189 +1,90 @@
-import CountUp from "@/components/CountUp";
-import { CursorGlow } from "@/components/CursorGlow";
 import Image from "next/image";
+import { Header } from "@/components/Header";
+import { CursorGlow } from "@/components/CursorGlow";
 
 const brands = [
-  { n: "01", initials: "TB", name: "The Batch", role: "Limited releases", copy: "Small-batch drops with polished shelf presence and clear retail recognition.", href: "https://getthebatch.com" },
-  { n: "02", initials: "SP", name: "Smokey Point", role: "Core cannabis", copy: "A familiar Washington name built around everyday confidence and consistency.", href: "https://google.com" },
-  { n: "03", initials: "RG", name: "Regulator", role: "Everyday Cannabis", copy: "Clean, direct, and built around reliability across product formats.", href: "https://goregulator.com" },
-  { n: "04", initials: "SC", name: "SnoCone", role: "Ice Cold Flavor", copy: "Triple infused joints, and vapes made for smooth sessions.", href: "https://snocone-premium-site.vercel.app/" },
-  { n: "05", initials: "1U", name: "1UP", role: "Arcade cannabis", copy: "Collectible energy with a playful edge and bold visual presence.", href: "https://google.com" },
-  { n: "06", initials: "JE", name: "Junes Edibles", role: "Edibles", copy: "Friendly, polished, approachable, and made for easy recognition.", href: "https://google.com" },
-  { n: "07", initials: "TE", name: "Treat Edibles", role: "Edibles", copy: "Simple, craveable, dependable, and easy for customers to understand.", href: "https://google.com" },
+  { name: "The Batch", type: "Limited releases", src: "/assets/brand/the-batch.svg", href: "https://getthebatch.com", className: "batch" },
+  { name: "Smokey Point", type: "Washington original", src: "/assets/brand/smokey-point.svg", href: "#contact", className: "smokey" },
+  { name: "Regulator", type: "Everyday cannabis", src: "/assets/brand/regulator.svg", href: "https://goregulator.com", className: "regulator" },
+  { name: "SnoCone", type: "Ice cold flavor", src: "/assets/brand/snocone.svg", href: "https://snocone-premium-site.vercel.app/", className: "snocone" },
+  { name: "1UP", type: "Arcade-inspired cannabis", src: "/assets/brand/1up.svg", href: "#contact", className: "oneup" },
+  { name: "June's Edibles", type: "Approachable edibles", src: "/assets/brand/junes-edibles.svg", href: "#contact", className: "junes" },
+  { name: "Treat Edibles", type: "Craveable edibles", src: "/assets/brand/treat-edibles.svg", href: "#contact", className: "treat" },
 ];
-
-const resources = [
-  { title: "Brand Assets", text: "Approved logos, lockups, and identity files." },
-  { title: "Photography", text: "Product images and shelf-ready visuals." },
-  { title: "Retail Resources", text: "Menu assets, references, and sales support." },
-  { title: "Brand Guidelines", text: "Usage notes for consistent presentation." },
-];
-
-const retailPartners = [
-  "Nirvana",
-  "Bud Barns",
-  "Cannabis and Glass",
-  "Remedy",
-  "Herbal Nation",
-  "Cascade Kropz",
-  "Canna4life",
-  "420 Carpenter",
-  "Craft Cannabis",
-  "Lucky Leaf",
-];
-
-const retailLoop = [...retailPartners, ...retailPartners];
-
-const brandLogos = [
-  { name: "The Batch", src: "/assets/brand/the-batch.svg" },
-  { name: "Smokey Point", src: "/assets/brand/smokey-point.svg" },
-  { name: "Regulator", src: "/assets/brand/regulator.svg" },
-  { name: "SnoCone", src: "/assets/brand/snocone.svg" },
-  { name: "1UP", src: "/assets/brand/1up.svg" },
-  { name: "Junes Edibles", src: "/assets/brand/junes-edibles.svg" },
-  { name: "Treat Edibles", src: "/assets/brand/treat-edibles.svg" },
-];
-
-const brandLogoLoop = [...brandLogos, ...brandLogos];
 
 export default function Home() {
   return (
     <main>
       <CursorGlow />
-      <header className="siteHeader">
-        <a className="logo" href="#top" aria-label="Ember Northwest home">
-          <span className="logoMark" />
-          <span>Ember Northwest</span>
-        </a>
-        <nav aria-label="Primary navigation">
-          <a href="#brands">Brands</a>
-          <a href="#retail">Retail</a>
-          <a href="#media">Media Kits</a>
-        </nav>
-        <a className="headerLink" href="#brands">Explore ↗</a>
-      </header>
+      <Header />
 
-      <section id="top" className="hero sectionShell">
-        <div className="ambient ambientOne" />
-        <div className="heroCopy reveal">
-          <p className="kicker">Washington-rooted cannabis brand family</p>
-          <h1>Clean brands. Clear shelves. Better retail support.</h1>
-          <p className="lead">
-            Ember Northwest is home to The Batch, Smokey Point, Regulator, SnoCone, 1UP, Junes Edibles, and Treat Edibles — a focused portfolio built around clarity, consistency, cleanliness, and customer confidence.
-          </p>
-          <div className="heroActions">
-            <a className="primaryButton" href="#brands">Explore brands</a>
-            <a className="textButton" href="#media">Media kits ↓</a>
+      <section className="hero" id="top">
+        <div className="heroNoise" />
+        <div className="heroEmber emberA" />
+        <div className="heroEmber emberB" />
+        <div className="shell heroInner">
+          <p className="eyebrow"><span /> Independent. Washington grown.</p>
+          <h1>We build<br />cannabis <em>brands.</em></h1>
+          <div className="heroBottom">
+            <p>Not for clients. For the culture. Ember Northwest is the independent house behind seven distinct cannabis brands, built exclusively for Washington State.</p>
+            <a className="roundLink" href="#brands" aria-label="Explore our brands"><span>Explore</span><b>↓</b></a>
           </div>
+        </div>
+        <div className="heroRail" aria-hidden="true"><span>WASHINGTON STATE</span><i /> <span>SEVEN BRANDS</span><i /> <span>ONE HOUSE</span></div>
+      </section>
 
-          <div className="heroStats reveal" aria-label="Company stats">
-            <div className="bigStat"><strong><CountUp end={300} suffix="+" /></strong><span>Retail partners</span></div>
-            <div className="bigStat"><strong><CountUp end={7} /></strong><span>Owned brands</span></div>
-            <div className="bigStat"><strong><CountUp end={1} /></strong><span>Shared standard</span></div>
+      <section className="manifesto shell" id="house">
+        <div className="sectionLabel"><span>01</span> The house</div>
+        <div className="manifestoCopy">
+          <p className="largeCopy">One roof. Many points of view. <span>Every brand we create has its own world, its own voice, and a reason to exist.</span></p>
+          <div className="manifestoDetails">
+            <p>We are operators, designers, makers, and cannabis people. We build our own products from the ground up and support them all the way to the shelf.</p>
+            <p>That ownership lets us move with intention, protect quality, and create brands that feel like something—not just look like something.</p>
           </div>
         </div>
       </section>
 
-      <section className="brandLogoMarquee sectionShell reveal" aria-label="Ember Northwest brand logos">
-        <p className="kicker">Brand family</p>
-        <div className="brandLogoRail">
-          <div className="brandLogoFade left" />
-          <div className="brandLogoFade right" />
-          <div className="brandLogoTrack">
-            {brandLogoLoop.map((brand, index) => (
-              <span className="brandLogoItem" key={`${brand.name}-${index}`}>
-                <img src={brand.src} alt={`${brand.name} logo`} />
-              </span>
-            ))}
-          </div>
+      <section className="brandsSection shell" id="brands">
+        <div className="sectionHeading">
+          <div className="sectionLabel"><span>02</span> Our brands</div>
+          <h2>Seven brands.<br /><em>Zero filler.</em></h2>
+          <p>Different moods, different moments, one shared standard.</p>
         </div>
-      </section>
-
-      <section className="story sectionShell twoColumn reveal">
-        <p className="kicker">Company overview</p>
-        <div>
-          <h2>One company. Seven brands. Hundreds of retail relationships.</h2>
-          <p>
-            Everything we build follows the same principle: make cannabis products easier to understand, easier to shop, and easier to trust. Clean shelves are not an accident — they come from consistent brand systems, reliable support, and products customers can recognize quickly.
-          </p>
-        </div>
-      </section>
-
-      <section className="retailMoment sectionShell reveal" id="retail" aria-label="Retail support">
-        <div className="retailImage" />
-        <div className="retailText">
-          <p className="kicker">Retail support</p>
-          <h2><CountUp end={300} suffix="+" /> retail partners across Washington.</h2>
-          <p>Dependable brands, approved assets, clear product communication, and customer-first support for stores, buyers, and partners.</p>
-          <div className="partnerMarquee" aria-label="Selected retail partners">
-            <div className="partnerFade left" />
-            <div className="partnerFade right" />
-            <div className="partnerTrack">
-              {retailLoop.map((partner, index) => (
-                <span className="partnerLogo" key={`${partner}-${index}`}>{partner}</span>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="brands" className="brandDirectory sectionShell reveal">
-        <div className="sectionIntro">
-          <p className="kicker">Owned brands</p>
-          <h2>Distinct brand experiences. One operating standard.</h2>
-        </div>
-        <div className="brandRows">
-          {brands.map((brand) => (
-            <a
-  className="brandRow"
-  href={brand.href}
-  target="_blank"
-  rel="noopener noreferrer"
-  key={brand.name}
->
-              <span className="brandNumber">{brand.n}</span>
-              <span className="brandBadge">{brand.initials}</span>
-              <span className="brandName">{brand.name}</span>
-              <span className="brandRole">{brand.role}</span>
-              <span className="brandCopy">{brand.copy}</span>
-              <span className="brandArrow">↗</span>
+        <div className="brandGrid">
+          {brands.map((brand, index) => (
+            <a className={`brandCard ${brand.className}`} href={brand.href} key={brand.name} target={brand.href.startsWith("http") ? "_blank" : undefined} rel="noreferrer">
+              <div className="brandCardTop"><span>0{index + 1}</span><span>{brand.type}</span></div>
+              <div className="brandLogo"><img src={brand.src} alt={`${brand.name} logo`} /></div>
+              <div className="brandCardBottom"><strong>{brand.name}</strong><span>↗</span></div>
             </a>
           ))}
         </div>
       </section>
 
-      <section id="media" className="mediaCenter sectionShell reveal">
-        <div>
-          <p className="kicker">Media center</p>
-          <h2>Approved assets for retail partners and internal teams.</h2>
-          <p>Link out to approved logos, photography, menu assets, product references, and brand guidelines. Replace placeholders with your live media kit URLs.</p>
-        </div>
-        <div className="resourceGrid">
-          {resources.map((resource) => (
-            <a href="#" key={resource.title}>
-              <strong>{resource.title}</strong>
-              <span>{resource.text}</span>
-              <em>↗</em>
-            </a>
-          ))}
+      <section className="standards" id="standards">
+        <div className="shell standardsInner">
+          <div className="sectionLabel light"><span>03</span> Our standard</div>
+          <p className="standardsStatement">Built here.<br />Made with intent.<br /><em>Never generic.</em></p>
+          <div className="standardList">
+            <div><span>01</span><strong>Distinct by design</strong><p>Every brand earns its place and owns its lane.</p></div>
+            <div><span>02</span><strong>Washington only</strong><p>Focused on the market and people we know best.</p></div>
+            <div><span>03</span><strong>Quality, carried through</strong><p>From the product to the package to the retail floor.</p></div>
+          </div>
         </div>
       </section>
 
-      <footer className="footer sectionShell">
-        <div className="footerBrand">
-          <strong>Ember Northwest</strong>
-          <span>Washington-rooted cannabis brand family.</span>
-        </div>
-        <div>
-          <strong>Brand Family</strong>
-          {brands.map((brand) => <a href={brand.href} key={brand.name}>{brand.name}</a>)}
-        </div>
-        <div>
-          <strong>Resources</strong>
-          <a href="#media">Media Center</a>
-          <a href="#retail">Retail Resources</a>
-          <a href="#brands">Portfolio</a>
-        </div>
+      <section className="contact shell" id="contact">
+        <div className="contactMark"><Image src="/logo/ember-logo.png" alt="" width={170} height={170} /></div>
+        <p className="eyebrow"><span /> Washington State</p>
+        <h2>Let&apos;s make<br />some <em>heat.</em></h2>
+        <p>Retailer, distributor, or just curious about what we&apos;re building?</p>
+        <a className="contactLink" href="mailto:hello@embernorthwest.com">hello@embernorthwest.com <span>↗</span></a>
+      </section>
+
+      <footer className="footer shell">
+        <div className="footerBrand"><Image src="/logo/ember-logo.png" alt="" width={28} height={28} /><strong>EMBER<br />NORTHWEST</strong></div>
+        <p>© 2026 Ember Northwest. For adults 21+ only.<br />Please consume responsibly.</p>
+        <div><a href="#top">Back to top ↑</a></div>
       </footer>
     </main>
   );
