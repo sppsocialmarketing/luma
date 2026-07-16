@@ -26,7 +26,7 @@ export default function Home() {
           <p className="eyebrow"><span /> Independent. Washington grown.</p>
           <h1>We build<br />cannabis <em>brands.</em></h1>
           <div className="heroBottom">
-            <p>Not for clients. For the culture. Ember Northwest is the independent house behind seven distinct cannabis brands, built exclusively for Washington State.</p>
+            <p>Ember Northwest is the independent house behind seven distinct cannabis brands, built exclusively for Washington State.</p>
             <a className="roundLink" href="#brands" aria-label="Explore our brands"><span>Explore</span><b>↓</b></a>
           </div>
         </div>
@@ -76,9 +76,8 @@ export default function Home() {
       <section className="contact shell" id="contact">
         <div className="contactMark"><Image src="/logo/ember-logo.png" alt="" width={170} height={170} /></div>
         <p className="eyebrow"><span /> Washington State</p>
-        <h2>Let&apos;s make<br />some <em>heat.</em></h2>
+        <h2>Where ideas<br />catch <em>fire.</em></h2>
         <p>Retailer, distributor, or just curious about what we&apos;re building?</p>
-        <a className="contactLink" href="mailto:hello@embernorthwest.com">hello@embernorthwest.com <span>↗</span></a>
       </section>
 
       <footer className="footer shell">
